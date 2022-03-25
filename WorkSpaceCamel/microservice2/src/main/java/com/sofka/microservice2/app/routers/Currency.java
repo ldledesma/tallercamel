@@ -50,5 +50,8 @@ public class Currency {
 		this.exchange = exchange;
 	}
 
-	
+		@Override
+	public String toString() {
+		return "Currency [id=" + id + ", from=" + from + ", to=" + to + ", exchange=" + exchange + "]";
+	}
 }

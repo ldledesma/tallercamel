@@ -18,10 +18,11 @@ public class MyRouter2 extends RouteBuilder{
 	public void configure() throws Exception {
 		
 		// TODO Auto-generated method stub
-		from("activemq:my-activemq-queue")
-		 .log("${body}")
+				from("activemq:my-activemq-queue")
+		 .log("datos que recibe: ${body}")
 		.unmarshal().json(JsonLibrary.Jackson, Currency.class)
 		 .bean(currencyExchangeTransformations)
+		 .log("datos que recibe serializado: ${body}")
 		   .to("log:received-message-from-active-mq");
 
 		
