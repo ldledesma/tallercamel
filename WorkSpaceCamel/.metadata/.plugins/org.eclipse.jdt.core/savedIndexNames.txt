@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+C:\WorkSpaceCamel\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+385039003.index
+2415553313.index

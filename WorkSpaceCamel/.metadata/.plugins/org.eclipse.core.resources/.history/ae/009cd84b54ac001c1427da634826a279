@@ -1,0 +1,22 @@
+package com.sofka.microservice2.app.routers;
+
+import org.apache.camel.builder.RouteBuilder;
+import org.apache.camel.model.dataformat.JsonLibrary;
+import org.springframework.stereotype.Component;
+
+@Component
+public class MyRouter2 extends RouteBuilder{
+
+	@Override
+	public void configure() throws Exception {
+		// TODO Auto-generated method stub
+		from("activemq:my-activemq-queue")
+		 .log("${body}")
+		.unmarshal().json(JsonLibrary.Jackson, Currency.class)
+		 .bean(currencyExchangeTransformations)
+		   .to("log:received-message-from-active-mq");
+
+		
+	}
+
+}
