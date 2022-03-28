@@ -1,14 +1,9 @@
 package com.sofka.microservice2.app.routers;
 
-import java.math.BigDecimal;
+import com.sofka.microservice2.app.models.Currency;
 
-import org.springframework.stereotype.Component;
+public interface CurrencyExchangeTransformations {
 
-@Component
-public class CurrencyExchangeTransformations {
-	public Currency processMessage(Currency currency) {
-		currency.setExchange(currency.getExchange().multiply(BigDecimal.TEN));
-		return currency;
-	}
-
+	Currency processMessage(Currency currency);
+	
 }

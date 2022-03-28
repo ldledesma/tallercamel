@@ -1,4 +1,4 @@
-package com.sofka.microservice2.app.routers;
+package com.sofka.microservice2.app.models;
 
 import java.math.BigDecimal;
 
@@ -50,8 +50,11 @@ public class Currency {
 		this.exchange = exchange;
 	}
 
-		@Override
+	@Override
 	public String toString() {
 		return "Currency [id=" + id + ", from=" + from + ", to=" + to + ", exchange=" + exchange + "]";
 	}
+
+	
+	
 }
